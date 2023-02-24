@@ -42,6 +42,11 @@ body{
 .bod{
   width: 100%;
 }
+@media(max-width: 620px){
+  .main-bod{
+    left: 0;
+  }
+}
 /*  NAV BODY */
 .nav-heading{
   position: fixed;
@@ -51,6 +56,10 @@ body{
   width: 56%;
   overflow: hidden;
   z-index: 9999;
+  transition: padding 0.3s ease;
+}
+body.navdis .nav-heading{
+  padding: 0 10px;
 }
 .nav-bar{
   display: flex;
@@ -61,6 +70,10 @@ body{
   background-color: var(--light);
   border-radius: 10px 10px 0 0;
   color: #fff;
+  transition: border-radius 0.3s ease;
+}
+body.navdis .nav-bar{
+  border-radius: 0;
 }
 .nav-bar .logo{
   display: flex;
@@ -137,6 +150,9 @@ body{
     right: 0;
     padding: 0;
     border-radius: 0 0 10px 10px;
+  }
+  body.navdis .nav-heading{
+    padding: 0;
   }
   .nav-bar{
     border-radius: 0;
@@ -334,7 +350,7 @@ body{
 .gen-container{
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   top: 0;
   position: relative;
 }
@@ -347,9 +363,11 @@ body{
 
 /*  LEFT SIDE NAVIGATION */
 .side-left-sec{
+  position: fixed;
+  left: 0;
   width: 22%;
   padding: 8px;
-  background: linear-gradient(-40deg, #E0E0E0 90%, #FFE700);
+  background: linear-gradient(-40deg, #E0E0E0 70%, #FFE700);
 }
 .app-name{
   margin: 5px 0 10px 0;
@@ -442,8 +460,10 @@ body{
 
 /*  RIGHT SIDE NAVIGATION */
 .side-right-sec{
+  position: fixed;
+  right: 0;
   width: 22%;
-  background: linear-gradient(30deg, #E0E0E0 95%, #5AC94D);
+  background: linear-gradient(30deg, #E0E0E0 70%, #5AC94D);
 }
 .right-icons{
   display: flex;
@@ -609,7 +629,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 110px;
+  margin-top: 120px;
   overflow-x: auto;
 }
 .story-section .story{
