@@ -26,12 +26,12 @@ body.dark{
   transition: 0.3s ease;
 }
 body.dim{
-  --body-color: #4D5079;
+  --body-color: #41436D;
   --light: #0E0225;
   --light-grey: #403C5E;
   --text-color: #fff;
-  --right-back: #37383E;
-  --left-back: #37383E;
+  --right-back: #41436D;
+  --left-back: #41436D;
   transition: 0.3s ease;
 }
 *{
@@ -412,21 +412,20 @@ body.show-nav .sidenav{
   left: 0;
   width: 22%;
   height: 100vh;
-  padding: 8px;
   background: var(--left-back);
 }
-side-left-dis{
-  display: flex;
+.side-left-dis{
+  /*display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
-  overflow: scroll;
+  align-items: center;*/
   height: 100%;
+  width: 100%;
+  padding: 8px;
+  overflow: scroll;
 }
 .app-name{
   margin: 5px 0 10px 0;
   padding: 15px 10px;
-  width: 100%;
   border-radius: 10px;
   background: var(--light);
 }
@@ -472,6 +471,7 @@ side-left-dis{
   margin: 10px 0;
 }
 .side-nav-desk{
+  width: 100%;
   margin-top: 20px;
 }
 .side-desk-cont{
