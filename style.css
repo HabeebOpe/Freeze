@@ -76,9 +76,26 @@ body.stiff{
   padding: 10px;
   width: 56%;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 99999;
   transition: padding 0.3s ease;
 }
+body.open-message .nav-heading{
+  z-index: 9999;
+}
+body.open-notification .nav-heading{
+  z-index: 9999;
+}
+body.open-theme .nav-heading{
+  z-index: 9999;
+}
+body.open-trend .nav-heading{
+  z-index: 9999;
+}
+body.show-nav .nav-heading{
+  z-index: 9999;
+}
+
+
 body.navdis .nav-heading{
   padding: 0 10px;
 }
@@ -91,6 +108,7 @@ body.navdis .nav-heading{
   background-color: var(--light);
   border-radius: 10px 10px 0 0;
   color: #fff;
+  z-index: 99999;
   transition: border-radius 0.3s ease;
 }
 body.navdis .nav-bar{
@@ -188,6 +206,7 @@ body.navdis .nav-bar{
     border-radius: 0;
     color: #fff;
     width: 100%;
+    z-index: 9999;
   }
   .search-bar{
     position: relative;
@@ -655,7 +674,7 @@ body.show-nav .sidenav{
   background: var(--light);
   z-index: 9999;
   overflow: hidden;
-  top: -100%;
+  top: -120%;
   transition: 0.3s ease;
 }
 body.open-notification .notification-sec{
@@ -870,7 +889,7 @@ body.open-notification .notification-sec{
     z-index: 9999;
     overflow: hidden;
     background: var(--light);
-    top: -100%;
+    top: -200%;
     transition: 0.3s ease;
   }
   body.open-message .message-sec-mobile{
@@ -1461,8 +1480,8 @@ body.retweetpop .retweet-pop-up{
   height: 100vh;
   width: 100%;
   background: var(--light);
-  z-index: 99999;
-  top: -100%;
+  z-index: 9999;
+  top: -120%;
   transition: top 0.3s ease;
 }
 body.open-trend .for-you-section{
@@ -1473,7 +1492,6 @@ body.open-trend .for-you-section{
   width: 100%;
   overflow: scroll;
 }
-
 .fy-nav-bar{
   position: fixed;
   display: flex;
@@ -1484,6 +1502,7 @@ body.open-trend .for-you-section{
   background-color: var(--light);
   border-radius: 10px 10px 0 0;
   color: #fff;
+  z-index: 9999;
   transition: 0.3s ease;
 }
 body.shad .fy-nav-bar{

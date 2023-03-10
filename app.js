@@ -76,7 +76,6 @@ openMessage.forEach(openMess =>{
     body.classList.remove("open-trend")
     }
     body.classList.toggle("open-message")
-    body.classList.add("change")
   })
 })
 /*--------------FOR YOU OPEN---------------*/
