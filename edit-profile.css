@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+::-webkit-scrollbar{
+        display: none;
+}
+:root{ 
+  --body-color: #E0E0E0;
+  --light: #fff;
+  --primary-color: gold;
+  --secondary-color: #5AC94D;
+  --text-color: #000;
+  --light-grey: #D1D3D5;
+  --nav-click: #000;
+  --hover-light: #CECED2;
+  --hover-thick: #9E9FAE;
+  --right-back: linear-gradient(30deg, #E0E0E0 70%, #5AC94D);
+  --left-back: linear-gradient(-40deg, #E0E0E0 70%, #FFE700);
+  --love: #FFCBCB;
+  transition: 0.3s ease;
+}
+body.dark{
+  --body-color: #37383E;
+  --light: #0F0F11;
+  --light-grey: #353538;
+  --text-color: #fff;
+  --right-back: #37383E;
+  --left-back: #37383E;
+  transition: 0.3s ease;
+}
+body.dim{
+  --body-color: #41436D;
+  --light: #0E0225;
+  --light-grey: #403C5E;
+  --text-color: #fff;
+  --right-back: #41436D;
+  --left-back: #41436D;
+  transition: 0.3s ease;
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  cursor: none;
+}
+body{
+  background-color: var(--body-color);
+  position: relative;
+  color: var(--text-color);
+}
+
+.edit-user-profile{
+  width: 100%;
+  height: 100%;
+  background: var(--light);
+}
+/*
+.edit-user-profile{
+  min-height: 100vh;
+  width: 100%;
+  background: var(--light);
+}
+.edit-profile-gen-container{
+  position: relative;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+*/
+.edit-user-profile{
+  min-height: 100vh;
+  background: var(--light);
+}
+
+.edit-profile-cont{
+  width: 100%;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+/*-------------PROFILE PHOTO AND COVER PHOTO----------------*/
+.edit-profile-cont .edit-photo-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+.cover-photo-ed{
+  position: relative;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+}
+.cover-photo-ed div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--light);
+}
+.cover-photo-ed div i{
+  font-size: 18px;
+  color: #fff;
+}
+.edit-cover-photo{
+  width: 100%;
+  height: 100%;
+}
+.profile-photo-ed{
+  position: absolute;
+  bottom: -50%;
+  left: 10px;
+  width: 80px;
+  height: 80px;
+}
+.profile-photo-ed div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--light);
+}
+.profile-photo-ed div i{
+  font-size: 18px;
+  color: #fff;
+}
+.edit-profile-photo{
+  width: 100%;
+  height: 100%;
+}
+
+
+.edit-texts{
+  margin-top: 50px;
+}
+.input-edit{
+  padding: 10px;
+}
+.input-edit input{
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  background: #E8E9F8;
+  margin: 5px 0;
+  transition: 0.2s ease;
+}
+.input-edit input:focus{
+  border-bottom: 3px solid var(--secondary-color);
+}
+.input-edit button{
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  background: var(--secondary-color);
+  color: var(--light);
+  margin-top: 20px;
+}

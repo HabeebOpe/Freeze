@@ -1,6 +1,9 @@
 const body = document.querySelector("body")
+const profileDisplay = document.querySelector(".side-profile")
+const profileClose = document.querySelector(".close-profile")
 const searchClick = document.querySelectorAll("#search-click")
 const navClick = document.querySelector("#nav-click")
+
 
 /*------------NAVIGATION DISPLAY------------*/
 navClick.addEventListener("click", ()=>{
@@ -48,22 +51,41 @@ window.addEventListener("scroll", scroll)
 
 /*------------IMAGE REVIEW SCRIPT-----------*/
 const img = document.querySelectorAll("img")
-const imgrev = document.querySelector(".img-review-flex")
-const ingre = document.querySelector(".img-review-bak")
 const mage = document.querySelector(".mage")
 
 img.forEach(image =>{
   image.addEventListener("click", ()=>{
+    
     var cla = image.src
-    body.classList.toggle('review-mag');
-    body.classList.toggle("stiff")
+    body.classList.add('review-mag');
     mage.src = cla
+    body.classList.add("fix")
     if(image.classList.contains("logoimg")){
-      body.classList.remove('review-mag');
-      body.classList.remove("stiff")
+      body.classList.remove('review-mag')
+      body.classList.remove("fix")
     }
   })
 })
+
+const reviewClose = document.querySelector(".img-review-flex")
+reviewClose.addEventListener("click", ()=>{
+  body.classList.toggle("show-back")
+})
+const reviewClosebtn = document.querySelector(".review-close")
+setInterval(()=>{
+  if(body.classList.contains("show-back")){
+    body.classList.remove("show-back")
+  }
+}, 3000)
+reviewClosebtn.addEventListener("click", ()=>{
+  if(body.classList.contains("fix")){
+    body.classList.toggle("fix")
+  }
+  body.classList.remove("review-mag")
+})
+
+
+
 
 /*--------------MESSAGE OPEN---------------*/
 const openMessage = document.querySelectorAll(".message-open")
@@ -71,11 +93,19 @@ openMessage.forEach(openMess =>{
   openMess.addEventListener("click", ()=>{
     if(body.classList.contains("open-notification")){
     body.classList.remove("open-notification")
+    body.classList.remove("fix")
     }
     if(body.classList.contains("open-trend")){
     body.classList.remove("open-trend")
+    body.classList.remove("fix")
     }
+    
     body.classList.toggle("open-message")
+    body.classList.remove("show-nav")
+    body.classList.toggle("message-active")
+    body.classList.remove("notification-active")
+    body.classList.remove("trend-active")
+    body.classList.toggle("fix")
   })
 })
 /*--------------FOR YOU OPEN---------------*/
@@ -84,28 +114,46 @@ openTrending.forEach(openTrend =>{
   openTrend.addEventListener("click", ()=>{
     if (body.classList.contains("open-notification")) {
       body.classList.remove("open-notification")
+      body.classList.remove("fix")
     }
-    if (body.classList.contains("openMessage")) {
-      body.classList.remove("openMessage")
+    if (body.classList.contains("open-message")) {
+      body.classList.remove("open-message")
+      body.classList.remove("fix")
     }
+    
     body.classList.toggle("open-trend")
+    body.classList.remove("show-nav")
+    body.classList.toggle("trend-active")
+    body.classList.remove("notification-active")
+    body.classList.remove("message-active")
+    body.classList.toggle("fix")
   })
 })
 
 
 
 /*------------NOTIFICATION OPEN-------------*/
-const openNotification = document.querySelector(".notification-open")
-openNotification.addEventListener("click", ()=>{
+const openNotification = document.querySelectorAll(".notification-open")
+openNotification.forEach(openNotif =>{
+  openNotif.addEventListener("click", ()=>{
   if(body.classList.contains("open-message")){
     body.classList.remove("open-message")
+    body.classList.remove("fix")
   }
   if(body.classList.contains("open-trend")){
     body.classList.remove("open-trend")
+    body.classList.remove("fix")
   }
+  
   body.classList.toggle("open-notification")
+  body.classList.remove("show-nav")
+  body.classList.toggle("notification-active")
+  body.classList.remove("trend-active")
+  body.classList.remove("message-active")
+  body.classList.toggle("fix")
 })
 
+})
 /*------------HOME CLICK FUNCTION-------------*/
 const homeClick = document.querySelector(".home-click")
 homeClick.addEventListener("click", ()=>{
@@ -118,6 +166,11 @@ homeClick.addEventListener("click", ()=>{
    if(body.classList.contains("open-trend")){
     body.classList.remove("open-trend")
    }
+   body.classList.remove("show-nav")
+   body.classList.remove("message-active")
+   body.classList.remove("notification-active")
+   body.classList.remove("trend-active")
+   body.classList.remove("fix")
 })
 
 
@@ -131,11 +184,13 @@ const theme = document.querySelectorAll(".theme")
 themeOpen.forEach(themeOpenc =>{
   themeOpenc.addEventListener("click", ()=>{
   body.classList.add("open-theme")
+  body.classList.add("fix")
   })
 })
 
 themeClose.addEventListener("click", ()=>{
   body.classList.remove("open-theme")
+  body.classList.remove("fix")
 })
 
 theme.forEach(themeBtn =>{
@@ -267,5 +322,12 @@ shari.forEach(sharid =>{
 })
 
 
-
-
+profileDisplay.addEventListener("click", ()=>{
+  body.classList.remove("show-nav")
+  body.classList.add("fix")
+  body.classList.add('profile-display')
+})
+profileClose.addEventListener("click", ()=>{
+  body.classList.remove("fix")
+  body.classList.remove('profile-display')
+})

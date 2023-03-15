@@ -43,12 +43,14 @@ body.dim{
   text-decoration: none;
   list-style: none;
   scroll-behavior: smooth;
+  cursor: none;
 }
 body{
   background-color: var(--body-color);
   position: relative;
   color: var(--text-color);
 }
+
 /*
 body.stiff{
   position: fixed;
@@ -59,6 +61,10 @@ body.stiff{
   width: 56%;
   padding: 10px;
 }
+body.fix .main-bod{
+  position: fixed;
+}
+
 .bod{
   width: 100%;
 }
@@ -66,6 +72,10 @@ body.stiff{
   .main-bod{
     left: 0;
   }
+  body.fix .main-bod{
+    position: fixed;
+  }
+
 }
 
 /*------------NAVIGATION BAR--------------*/
@@ -76,26 +86,9 @@ body.stiff{
   padding: 10px;
   width: 56%;
   overflow: hidden;
-  z-index: 99999;
+  z-index: 9;
   transition: padding 0.3s ease;
 }
-body.open-message .nav-heading{
-  z-index: 9999;
-}
-body.open-notification .nav-heading{
-  z-index: 9999;
-}
-body.open-theme .nav-heading{
-  z-index: 9999;
-}
-body.open-trend .nav-heading{
-  z-index: 9999;
-}
-body.show-nav .nav-heading{
-  z-index: 9999;
-}
-
-
 body.navdis .nav-heading{
   padding: 0 10px;
 }
@@ -105,16 +98,14 @@ body.navdis .nav-heading{
   align-items: center;
   width: 100%;
   padding: 5px;
-  background-color: var(--light);
+  background: var(--light);
   border-radius: 10px 10px 0 0;
   color: #fff;
-  z-index: 99999;
   transition: border-radius 0.3s ease;
 }
 body.navdis .nav-bar{
   border-radius: 0;
 }
-
 .nav-bar .logo{
   display: flex;
   align-items: center;
@@ -197,7 +188,7 @@ body.navdis .nav-bar{
     left: 0;
     right: 0;
     padding: 0;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0;
   }
   body.navdis .nav-heading{
     padding: 0;
@@ -206,7 +197,6 @@ body.navdis .nav-bar{
     border-radius: 0;
     color: #fff;
     width: 100%;
-    z-index: 9999;
   }
   .search-bar{
     position: relative;
@@ -239,7 +229,7 @@ body.navdis .nav-bar{
   padding: 3px 5px 5px 35px;
   background: var(--light);
   border-top: 1px solid var(--light-grey);
-  border-radius: 0 0 10px 10px;
+  border-radius: 0;
 }
 .share-sec ul{
   display: flex;
@@ -310,9 +300,10 @@ body.navdis .nav-bar{
   width: 100%;
   border-radius: 15px 15px 0 0;
   background: var(--light-grey);
-  z-index: 9999;
+  color: var(--text-color);
   bottom: -100%;
-  transition: bottom 0.3s linear;
+  z-index: 9;
+  transition: bottom 0.5s linear;
 }
 body.show-nav .sidenav{
   bottom: 0;
@@ -343,6 +334,7 @@ body.show-nav .sidenav{
 }
 .side-profile .pro-name{
   font-size: 14px;
+  color: var(--text-color);
   padding-left: 10px;
 }
 /*
@@ -365,6 +357,7 @@ body.show-nav .sidenav{
   padding: 18px 10px;
   border-radius: 10px;
   background: var(--light);
+  color: var(--text-color);
   border: 2px solid var(--light-grey);
   transition: 0.3s ease;
 }
@@ -488,14 +481,19 @@ body.show-nav .sidenav{
 }
 .user-profile .my-profile{
   width: 150px;
-  padding: 10px;
+  padding: 8px;
   border: none;
   background: var(--primary-color);
   font-size: 16px;
   font-weight: bold;
-  color: var(--text-color);
+  color: #000;
   border-radius: 10px;
   margin: 10px 0;
+  transition: 0.2s ease;
+}
+.user-profile .my-profile:hover{
+  background: #fff;
+  border: 2px solid var(--primary-color);
 }
 .side-nav-desk{
   width: 100%;
@@ -532,52 +530,6 @@ body.show-nav .sidenav{
 }
 
 
-
-
-
-
-
-
-
-
-.fr-request{
-  margin-top: 25px;
-}
-.fr-request h3{
-  padding: 5px;
-}
-.fr-request .request-sec ul li{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  padding: 5px 0;
-}
-.fr-request .request-sec ul li:hover{
-  background: var(--light-grey)
-}
-.request-sec ul li img{
-  min-width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-.request-sec ul li h3{
-  padding: 5px;
-  margin-top: 2px;
-}
-.request-sec ul li button{
-  width: 40%;
-  height: 35px;
-  border-radius: 10px;
-  border: none;
-  background: var(--primary-color);
-  font-size: 14px;
-  color: var(--text-color);
-  margin-right: 5px;
-  
-}
-
-
 /*-------------RIGHT SIDE NAV-------------*/
 .side-right-sec{
   position: fixed;
@@ -605,7 +557,6 @@ body.show-nav .sidenav{
   height: 60px;
   padding: 10px 5px;
   border-radius: 10px;
-  z-index: 999;
   background: var(--light);
 }
 .right-icons span{
@@ -667,18 +618,17 @@ body.show-nav .sidenav{
   display: block;
   position: fixed;
   top: 0;
-  right: 0;
   height: 100vh;
   width: 100%;
   border-radius: 0;
   background: var(--light);
-  z-index: 9999;
+  left: -110%;
   overflow: hidden;
-  top: -120%;
-  transition: 0.3s ease;
+  z-index: 9;
+  transition: left 0.5s linear;
 }
 body.open-notification .notification-sec{
-  top: 0;
+  left: 0;
 }
 .notif-sec-dis{
   position: relative;
@@ -721,6 +671,7 @@ body.open-notification .notification-sec{
   border: 1px solid var(--light-grey);
   border-radius: 20px;
   font-size: 14px;
+  background: var(--light);
   outline: none;
   transition: border 0.2s ease;
 }
@@ -783,9 +734,48 @@ body.open-notification .notification-sec{
 .notification-cont ul li .noti-cont .noti-time span:last-child:hover{
   background: var(--body-color);
 }
+@media (min-width: 620px){
+  .notification-sec{
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 55%;
+    border-radius: 0;
+    background: var(--light);
+    left: -110%;
+    z-index: 9;
+    transition: left 0.5s ease;
+  }
+  body.open-notification .notification-sec{
+    left: 23%;
+  }
+  .notif-gen-head{
+    position: fixed;
+    width: 55%;
+  }
+}
 
 
 
+/*-------------VIEW MORE BUTTON SECTION----------------*/
+.view-more{
+  width: 100%;
+  padding: 0 10px;
+}
+.view-more button{
+  width: 120px;
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--light);
+  font-size: 16px;
+  border: none;
+  transition: 0.3s ease;
+}
+.view-more button:hover{
+  background: var(--light-grey);
+  border: 2px solid var(--light)
+}
 
 /*-----------MESSAGE SECTION------------*/
 .message-sec{
@@ -803,8 +793,8 @@ body.open-notification .notification-sec{
   width: 100%;
   max-height: 350px;
   border-radius: 10px;
-  background: var(--light);
   overflow: scroll;
+  background: var(--light);
 }
 .mess-head{
   width: 100%;
@@ -834,6 +824,9 @@ body.open-notification .notification-sec{
 .chat{
   padding-top: 1px;
 }
+.chat ul{
+  overflow: hidden;
+}
 .chat li{
   display: flex;
   align-items: center;
@@ -841,8 +834,6 @@ body.open-notification .notification-sec{
   padding: 5px;
   margin: 2px 0;
   transition: background 0.3s ease;
-  overflow: hidden;
-  border-radius: 10px;
   border: 2px solid var(--light-grey);
 }
 .chat li:hover{
@@ -883,14 +874,14 @@ body.open-notification .notification-sec{
     position: fixed;
     top: 0;
     right: 23%;
-    height: 60vh;
+    height: 100vh;
     width: 54%;
-    border-radius: 15px 0 0 15px;
-    z-index: 9999;
+    border-radius: 0;
     overflow: hidden;
     background: var(--light);
-    top: -200%;
-    transition: 0.3s ease;
+    top: -110%;
+    z-index: 9;
+    transition: top 0.5s ease;
   }
   body.open-message .message-sec-mobile{
     top: 0;
@@ -909,18 +900,19 @@ body.open-notification .notification-sec{
     display: block;
     position: fixed;
     top: 0;
-    right: 0;
     height: 100vh;
     width: 100%;
     border-radius: 0;
     background: var(--light);
-    z-index: 9999;
     overflow: hidden;
-    top: -100%;
-    transition: 0.3s ease;
+    right: -100%;
+    opacity: 0;
+    z-index: 9;
+    transition: right 0.5s linear;
   }
   body.open-message .message-sec-mobile{
-    top: 0
+    right: 0;
+    opacity: 1;
   }
   .message-sec-mobile .message-sec-mobile-div{
     position: relative;
@@ -975,7 +967,42 @@ body.open-notification .notification-sec{
     overflow: hidden;
   }
 }
-
+.fr-request{
+  margin-top: 25px;
+}
+.fr-request h3{
+  padding: 5px;
+}
+.fr-request .request-sec ul li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 5px 0;
+}
+.fr-request .request-sec ul li:hover{
+  background: var(--light-grey)
+}
+.request-sec ul li img{
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.request-sec ul li h3{
+  padding: 5px;
+  margin-top: 2px;
+}
+.request-sec ul li button{
+  width: 40%;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary-color);
+  font-size: 14px;
+  color: var(--text-color);
+  margin-right: 5px;
+  
+}
 
 /*  MOBILE AND TAB VIEW OF LEFT NAV */
 @media (max-width: 620px){
@@ -983,7 +1010,6 @@ body.open-notification .notification-sec{
     position: fixed;
     width: 80%;
     min-height: 100vh;
-    z-index: 9999;
     background: var(--light);
     display: none;
   }
@@ -1057,20 +1083,11 @@ body.open-notification .notification-sec{
   bottom: 0;
   width: 100%;
   height: 55px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   padding: 2px;
-  z-index: 99;
   background: var(--light);
   border-top: 2px solid var(--light-grey);
-}
-body.open-notification .bot-nav{
-  z-index: 99999;
-}
-body.open-message .bot-nav{
-  z-index: 99999;
-}
-body.open-trend .bot-nav{
-  z-index: 999999;
+  z-index: 9;
 }
 .botnav{
   width: 100%;
@@ -1087,7 +1104,7 @@ body.open-trend .bot-nav{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 13%;
+  width: 16%;
   border-radius: 10px;
   height: 100%;
   background: var(--light);
@@ -1102,9 +1119,6 @@ body.open-trend .bot-nav{
   width: 100%;
   height: 100%;
   cursor: none;
-}
-.botnav ul li:hover{
-  background: var(--light-grey)
 }
 .botnav ul li span i{
   font-size: 15px;
@@ -1131,7 +1145,18 @@ body.open-trend .bot-nav{
   border-left: 0.3px solid #000;
   border-bottom: 0.3px solid #000;
 }
-
+.botnav ul li:nth-child(1){
+  background: var(--light-grey);
+}
+body.message-active .botnav ul li:nth-child(4){
+  background: var(--light-grey);
+}
+body.trend-active .botnav ul li:nth-child(3){
+  background: var(--light-grey);
+}
+body.notification-active .botnav ul li:nth-child(5){
+  background: var(--light-grey);
+}
 
 /*------------BOTTOM NAV DESKTOP VIEW-----------------*/
 @media (min-width: 620px){
@@ -1156,14 +1181,14 @@ body.open-trend .bot-nav{
   width: 100%;
   background: var(--light);
   border-radius: 10px;
-  padding: 2px;
+  padding: 3px 8px 5px 8px;
   margin: 5px 0;
 }
 .po-list li .post-name{
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 8px 5px;
+  padding: 8px 0;
 }
 .post-name img{
   width: 40px;
@@ -1181,11 +1206,14 @@ body.open-trend .bot-nav{
   font-size: 13px;
 }
 .po-list li .posted{
-  padding: 5px 8px;
+  max-height: 3000px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .po-list li .posted img{
+  background-size: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
 }
 .po-list li .posted h2{
@@ -1193,13 +1221,12 @@ body.open-trend .bot-nav{
 }
 .po-list li .post-des{
   width: 100%;
-  padding: 5px;
 }
 .post-des .react{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 5px 0;
 }
 .post-des .react .react-flex{
   display: flex;
@@ -1292,38 +1319,6 @@ body.open-trend .bot-nav{
 }
 
 
-
-
-
-
-
-
-
-/*--------------IMAGE CLICK REVIEW---------------*/
-.img-review-flex{
-  position: fixed;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 99999;
-  display: none;
-}
-body.review-mag .img-review-flex{
-  display: flex;
-}
-.img-review-flex .img-review-bak{
-  padding: 0px;
-}
-.img-review-flex .img-review-bak img{
-  width: 100%;
-  height: auto;
-  transition: 0.2s ease;
-}
-
 /*--------------THEME SWITH---------------*/
 .theme-swith-flex{
   position: fixed;
@@ -1333,8 +1328,8 @@ body.review-mag .img-review-flex{
   justify-content: center;
   height: 100vh;
   width: 100%;
+  z-index: 9;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 99999;
   display: none;
 }
 body.open-theme .theme-swith-flex{
@@ -1412,8 +1407,8 @@ body.open-theme .theme-swith-flex{
   height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 99999;
   display: none;
+  z-index: 99;
   transition: 1s ease;
 }
 body.retweetpop .retweet-popup-section{
@@ -1480,9 +1475,9 @@ body.retweetpop .retweet-pop-up{
   height: 100vh;
   width: 100%;
   background: var(--light);
-  z-index: 9999;
-  top: -120%;
-  transition: top 0.3s ease;
+  top: -100%;
+  z-index: 9;
+  transition: top 0.5s linear;
 }
 body.open-trend .for-you-section{
   top: 0;
@@ -1502,7 +1497,6 @@ body.open-trend .for-you-section{
   background-color: var(--light);
   border-radius: 10px 10px 0 0;
   color: #fff;
-  z-index: 9999;
   transition: 0.3s ease;
 }
 body.shad .fy-nav-bar{
@@ -1521,6 +1515,22 @@ body.navdis fy-.nav-bar{
   width: 43px;
   height: auto;
 }
+
+/*--------------FOR YOU DESKTOP VIEW ---------------*/
+@media (min-width: 620px){
+  .fy-nav-bar{
+    position: fixed;
+    width: 55%;
+  }
+  .for-you-section{
+    width: 55%;
+    left: 23%;
+  }
+  body.open-trend .for-you-section {
+    top: 0;
+  }
+}
+
 
 /*---------------FOR YOU SEARCH BAR------------*/
 .fy-search-bar{
@@ -1673,6 +1683,71 @@ body.navdis fy-.nav-bar{
 }
 
 
+
+/*-------------USER PROFILE----------------*/
+
+
+
+
 .height{
-  height: 200px;
+  height: 300px;
+}
+
+
+
+
+
+/*--------------IMAGE CLICK REVIEW---------------*/
+.img-review-flex{
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+  display: none;
+}
+body.review-mag .img-review-flex{
+  display: flex;
+}
+.img-review-flex .img-review-bak{
+  padding: 0px;
+}
+.review-back{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  height: 55px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  top: -100%;
+  transition: 0.3s ease;
+}
+body.show-back .review-back{
+  top: 0;
+}
+.review-back span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+.review-back span:hover{
+  background: rgba(225, 225, 0, 0.2);
+}
+.review-back span i{
+  font-size: 18px;
+  color: #fff;
+}
+.img-review-flex .img-review-bak img{
+  width: 100%;
+  height: auto;
+  transition: 0.2s ease;
 }
