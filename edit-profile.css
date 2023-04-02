@@ -51,11 +51,7 @@ body{
   color: var(--text-color);
 }
 
-.edit-user-profile{
-  width: 100%;
-  height: 100%;
-  background: var(--light);
-}
+
 /*
 .edit-user-profile{
   min-height: 100vh;
@@ -71,9 +67,58 @@ body{
 }
 */
 .edit-user-profile{
-  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
   background: var(--light);
+  z-index: 999;
+  right: -100%;
+  transition: 0.5s ease;
 }
+body.show-edit .edit-user-profile{
+  right: 0;
+}
+.edit-profile-gen-container{
+  position: relative;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+/*---------------GO BACK TO HOME--------------*/
+.edit-profile-back{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  height: 55px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  top: -100%;
+  transition: 0.5s ease;
+}
+body.edit-show-back .edit-profile-back{
+  top: 0;
+}
+.edit-profile-back span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+.edit-profile-back span:hover{
+  background: rgba(225, 225, 0, 0.2);
+}
+.edit-profile-back span i{
+  font-size: 18px;
+  color: #fff;
+}
+
 
 .edit-profile-cont{
   width: 100%;
@@ -102,8 +147,15 @@ body{
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   border: 2px solid var(--light);
+}
+.cover-photo-ed div input{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: gold;
+  opacity: 0;
 }
 .cover-photo-ed div i{
   font-size: 18px;
@@ -112,6 +164,7 @@ body{
 .edit-cover-photo{
   width: 100%;
   height: 100%;
+  background-size: cover;
 }
 .profile-photo-ed{
   position: absolute;
@@ -128,19 +181,25 @@ body{
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   border: 2px solid var(--light);
+}
+.profile-photo-ed div input{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: gold;
+  opacity: 0;
 }
 .profile-photo-ed div i{
   font-size: 18px;
   color: #fff;
 }
 .edit-profile-photo{
+  background-size: cover;
   width: 100%;
   height: 100%;
 }
-
-
 .edit-texts{
   margin-top: 50px;
 }
@@ -148,18 +207,23 @@ body{
   padding: 10px;
 }
 .input-edit input{
+  height: 50px;
+}
+.input-edit input, textarea{
   width: 100%;
   padding: 15px 10px;
-  border-radius: 10px;
   font-size: 15px;
   border: none;
   outline: none;
-  background: #E8E9F8;
+  background: var(--light-grey);
+  color: var(--text-color);
   margin: 5px 0;
   transition: 0.2s ease;
 }
-.input-edit input:focus{
-  border-bottom: 3px solid var(--secondary-color);
+
+.input-edit input:focus, textarea:focus{
+  background: rgba(191, 255, 150, 0.4);
+  border-bottom: 4px solid var(--secondary-color);
 }
 .input-edit button{
   width: 100%;
@@ -171,4 +235,7 @@ body{
   background: var(--secondary-color);
   color: var(--light);
   margin-top: 20px;
+}
+.edit-height{
+  height: 200px;
 }

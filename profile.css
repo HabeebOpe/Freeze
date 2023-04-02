@@ -126,17 +126,18 @@ body.show-back .back{
   justify-content: center;
   width: 100%;
 }
-.profile-gen-container .cover-photo-div .cover-photo{
+.profile-gen-container .cover-photo-div #cover1{
   width: 100%;
   max-height: 80px;
+  border-bottom: 1px solid var(--light-grey);
 }
 
-.profile-gen-container .cover-photo-div .profile-photo{
+.profile-gen-container .cover-photo-div #profile1{
   position: absolute;
   bottom: -50%;
   left: 10px;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border: 3px solid var(--light);
   border-radius: 50%;
 }
@@ -193,7 +194,7 @@ body.show-back .back{
 .user-link{
   padding: 5px 10px;
 }
-.user-link p{
+.user-link a{
   font-size: 16px;
   color: #2A38D7;
 }
@@ -245,5 +246,5 @@ hr{
   border: none;
 }
 .height{
-  height: 200px;
+  height: 300px;
 }

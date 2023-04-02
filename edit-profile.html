@@ -7,45 +7,44 @@
   <title>Edit profile</title>
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/fontawesome.min.css">
-  <link rel="stylesheet" href="edit-profile.css">
+  
 </head>
 
 <body>
   <div class="edit-user-profile">
     <div class="edit-profile-gen-container">
-      <div class="edit-profile-cont">
-        
         <div class="edit-photo-div">
           <div class="cover-photo-ed">
-            <img src="asset/cover.jpg" class="edit-cover-photo" alt="">
+            <img src="asset/cover.jpg" class="edit-cover-photo" id="cover-id">
             <div>
+              <input type="file" id="cover-demo" onchange="readFile();" />
               <i class="fa fa-edit"></i>
             </div>
           </div>
           <div class="profile-photo-ed">
-            <img src="asset/muhammad.jpg" class="edit-profile-photo" alt="">
+            <img src="asset/muhammad.jpg" class="edit-profile-photo" id="profile-id">
             <div>
+              <input type="file" id="profile-demo" onchange="readFile();" />
               <i class="fa fa-edit"></i>
             </div>
           </div>
         </div>
         <div class="edit-texts">
           <form class="input-edit">
-            <input placeholder="Display name" type="text" required>
-            <input placeholder="About" type="text" required>
-            <input placeholder="Location" type="text" required>
-            <input placeholder="Hobbies" type="text" required>
-            <input placeholder="Link" type="text" required>
-            <input placeholder="Contact" type="number" required>
-            <button type="button">SAVE CHANGES</button>
+            <input id="user-name" placeholder="Display name" maxlength="30" type="text" required>
+            <input id="user-bio" placeholder="About" maxlength="60" type="text" required>
+            <input id="user-location" placeholder="Location" type="text" required>
+            <input id="user-interest" placeholder="Interest" type="text" required>
+            <input id="user-link" placeholder="Link" type="text" required>
+            <input id="user-contact" placeholder="Contact" type="number" required>
+            <button class="save" type="button">SAVE CHANGES</button>
           </form>
+          
         </div>
-        
-      </div>
     </div>
   </div>
 
-<script src="edit-profile.js"></script>
+
 </body>
 
 </html>

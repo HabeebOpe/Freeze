@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="css/fontawesome.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="edit-profile.css">
   <script src="https://kit.fontawesome.com/1c36f4658d.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <nav class="nav-heading">
     <div class="nav-bar">
       <div class="logo">
-        <img src="asset/SGN_09_21_2022_1663749062118.png" alt="logo">
+        <img src="asset/SGN_09_21_2022_1663749062118.png">
       </div>
       <div class="search-bar">
         <input id="search-input" placeholder="Search..." type="text">
@@ -24,7 +25,7 @@
         </div>
       </div>
       <div id="nav-click" class="nav-icon">
-        <img src="asset/codebox.jpg" class="logoimg" alt="logo">
+        <img src="asset/codebox.jpg" class="logoimg" id="profile3">
       </div>
     </div>
     <div class="share-sec">
@@ -1261,7 +1262,7 @@
         </li>
         <li>
           <span>
-            <i class="fa fa-users"></i>
+            <i class="fa fa-search"></i>
           </span>
         </li>
         <li class="trending-open">
@@ -1351,26 +1352,26 @@
       </div>
       <div class="profile-gen-container">
         <div class="cover-photo-div">
-          <img src="asset/cover.jpg" class="cover-photo" alt="">
-          <img src="asset/muhammad.jpg" class="profile-photo" alt="">
+          <img src="asset/cover.jpg" id="cover1">
+          <img src="asset/muhammad.jpg" class="profile-photo" id="profile1">
         </div>
         <div class="edit-profile">
-          <button>
+          <button id="open-edit">
             <span>Edit profile</span>
             <i class="fa fa-edit"></i>
           </button>
         </div>
         <div class="user-name">
-          <h2>Habeebullah Opeyemi</h2>
+          <h2 id="userName">Habeebullah Opeyemi</h2>
           <p>@BeebCodes🌀🌀</p>
         </div>
         <div class="user-biodata">
-          <p>
+          <p id="userBio">
             Lorem ipsum 🙂 dolor sit amet, consectetur adipisicing ⚡elit. Ullam 🌱deserunt provident reprehenderit🎨 explicabo accusamus esse😁💗
           </p>
         </div>
         <div class="user-link">
-          <p>link/habeebullahope@98s</p>
+          <a id="userLink" href="">link/habeebullahope@98s</a>
         </div>
         <div class="follow-message">
           <button>Connect</button>
@@ -1380,9 +1381,9 @@
           <ul>
             <li>
               <i class="fa fa-location"></i>
-              <span>Ojo, Lagos Nigeria</span>
+              <span id="userLocation">Ojo, Lagos Nigeria</span>
             </li>
-            <li>Science and Technology</li>
+            <li id="userInterest">Science and Technology</li>
             <li>Biotechnology</li>
             <li>Art</li>
             <li>Travels and Tour</li>
@@ -1395,11 +1396,53 @@
     </div>
   </div>
   
+  <div class="edit-user-profile">
+    <div class="edit-profile-gen-container">
+      <!--<div class="edit-profile-back">
+        <span class="edit-close-profile">
+          <i class="fa fa-arrow-left"></i>
+        </span>
+      </div>-->
+      <div class="edit-profile-cont">
+        <div class="edit-photo-div">
+          <div class="cover-photo-ed">
+            <img src="asset/cover.jpg" class="edit-cover-photo" id="cover2">
+            <div>
+              <input type="file" id="cover-demo" onclick="readFile()"/>
+              <i class="fa fa-edit"></i>
+            </div>
+          </div>
+          <div class="profile-photo-ed">
+            <img src="asset/muhammad.jpg" class="edit-profile-photo" id="profile2">
+            <div>
+              <input type="file" id="profile-demo" onclick="readFil()"/>
+              <i class="fa fa-edit"></i>
+            </div>
+          </div>
+        </div>
+        <div class="edit-texts">
+          <form class="input-edit">
+            <input id="user-name" placeholder="Display name" maxlength="40" types y="text" required>
+            <textarea id="user-bio"  placeholder="Bio" maxlength="400" class="bioinput"  required></textarea>
+            <input id="user-location" placeholder="Location" type="text" required>
+            <input id="user-interest" placeholder="Interest" type="text" required>
+            <input id="user-link" placeholder="Link" type="text" required>
+            <input id="user-contact" placeholder="Contact" type="number" required>
+            <button class="saveEdit" type="submit">SAVE CHANGES</button>
+          </form>
+        </div>
+        <div class="height"></div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
   
   <div class="sidenav">
     <div class="sidenav-dis">
         <div class="side-profile">
-          <img src="asset/profile-pic.jpg" alt="">
+          <img src="asset/profile-pic.jpg" id="profile4">
           <div class="pro-name">
             <h3>Okunlola Habeebullah O</h3>
             <p>View profile</p>
@@ -1478,6 +1521,7 @@
   </div>
   
 <script src="app.js"></script>
+<script src="edit-profile.js"></script>
 <script src="profile.js"></script>
 </body>
 

@@ -322,6 +322,30 @@ shari.forEach(sharid =>{
 })
 
 
+/*const openEditProfile = document.querySelector(".open-edit-profile")
+const closeEditProfile = document.querySelector(".edit-close-profile")
+*/
+
+const userName = document.getElementById("user-name")
+const userBio = document.getElementById("user-bio")
+const userLocation = document.getElementById("user-location")
+const userInterest = document.getElementById("user-interest")
+const userLink = document.getElementById("user-link")
+const userContact = document.getElementById("user-contact")
+
+const userNameedit = document.getElementById("userName")
+const userBioedit = document.getElementById("userBio")
+const userLocationedit = document.getElementById("userLocation")
+const userInterestedit = document.getElementById("userInterest")
+const userLinkedit = document.getElementById("userLink")
+
+
+
+
+
+
+
+
 profileDisplay.addEventListener("click", ()=>{
   body.classList.remove("show-nav")
   body.classList.add("fix")
@@ -330,4 +354,90 @@ profileDisplay.addEventListener("click", ()=>{
 profileClose.addEventListener("click", ()=>{
   body.classList.remove("fix")
   body.classList.remove('profile-display')
+})
+
+const openEdit = document.querySelector("#open-edit")
+const editSpace = document.querySelector(".edit-user-profile")
+
+openEdit.addEventListener("click", ()=>{
+  body.classList.remove("fix")
+  body.classList.remove('profile-display')
+  body.classList.add("show-edit")
+})
+const saveChanges = document.querySelector(".saveEdit")
+
+saveChanges.addEventListener("click", ()=>{
+  console.log("money")
+  userNameedit.innerHTML = userName.value
+  userBioedit.innerHTML = userBio.value
+  userLinkedit.href = userLink.value
+  userLinkedit.innerHTML = userLink.value
+  userInterestedit.innerHTML = userInterest.value
+  userLocationedit.innerHTML = userLocation.value
+  
+  
+  body.classList.remove("fix")
+  body.classList.add('profile-display')
+  body.classList.remove("show-edit")
+  
+  if(userName.value = null){
+    body.classList.add("fix")
+    body.classList.remove('profile-display')
+    body.classList.add("show-edit")
+  }
+  
+})
+
+/*
+openEditProfile.addEventListener("click", ()=>{
+  console.log("money")
+  body.classList.add("fix")
+  body.classList.remove('profile-display')
+  body.classList.add('edit-profile-display')
+})
+
+
+const saveChanges = document.querySelector(".saveEdit")
+
+saveChanges.addEventListener("click", ()=>{
+  console.log("money")
+  
+  userNameedit.innerHTML = userName.value
+  userBioedit.innerHTML = userBio.value
+  userLinkedit.innerHTML = userLink.value
+  userInterestedit.innerHTML = userInterest.value
+  userLocationedit.innerHTML = userLocation.value
+  body.classList.remove("fix")
+  body.classList.remove('edit-profile')
+})
+
+
+/*
+const openEditProfile = document.querySelector(".open-edit-profile")
+const closeEditProfile = document.querySelector(".edit-close-profile")
+
+openEditProfile.addEventListener("click", ()=>{
+  console.log("money")
+  body.classList.add("fix")
+  body.classList.remove('profile-display')
+  body.classList.add('edit-profile-display')
+})
+
+closeEditProfile.addEventListener("click", ()=>{
+  body.classList.remove("fix")
+  body.classList.remove('edit-profile-display')
+})
+*/
+
+
+/*--------------AUTO RESIZE BIO---------------*/
+const textarea = document.querySelector(".bioinput");
+
+textarea.addEventListener("keyup", e=>{
+   
+   textarea.style.height = "auto";
+   
+   let height = e.target.scrollHeight;
+   
+   textarea.style.height = ` ${height}px `;
 })
